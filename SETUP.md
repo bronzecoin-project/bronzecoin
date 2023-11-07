@@ -27,12 +27,13 @@
     - Install required GUI libraries:
 
       ```bash
-      sudo apt-get install libqrencode-dev
+      sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
       ```
 
       ```bash
       sudo apt-get install libqrencode-dev
       ```
+  
 
 4.  Berkeley DB Installation
 
