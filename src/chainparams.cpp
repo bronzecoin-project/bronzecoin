@@ -282,37 +282,37 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 150;
-        consensus.BIP16Height = 0;
-        consensus.BIP34Height = 500; // BIP34 activated on regtest (Used in functional tests)
-        consensus.BIP34Hash = uint256();
-        consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in functional tests)
-        consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in functional tests)
-        consensus.CSVHeight = 432; // CSV activated on regtest (Used in rpc activation tests)
-        consensus.SegwitHeight = 0; // SEGWIT is always activated on regtest unless overridden
-        consensus.MinBIP9WarningHeight = 0;
+        // consensus.BIP16Height = 0;
+        // consensus.BIP34Height = 500; // BIP34 activated on regtest (Used in functional tests)
+        // consensus.BIP34Hash = uint256();
+        // consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in functional tests)
+        // consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in functional tests)
+        // consensus.CSVHeight = 432; // CSV activated on regtest (Used in rpc activation tests)
+        // consensus.SegwitHeight = 0; // SEGWIT is always activated on regtest unless overridden
+        // consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        consensus.nPowTargetSpacing = 2.5 * 60;
+        consensus.nPowTargetSpacing = 4 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
         consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
 
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = Consensus::BIP9Deployment::ALWAYS_ACTIVE;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].bit = 2;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = Consensus::BIP9Deployment::ALWAYS_ACTIVE;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
-        // Deployment of MWEB (LIP-0002 and LIP-0003)
-        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].bit = 4;
-        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartTime = 1601450001; // September 30, 2020
-        consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
+        // // Deployment of MWEB (LIP-0002 and LIP-0003)
+        // consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].bit = 4;
+        // consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nStartTime = 1601450001; // September 30, 2020
+        // consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
-        consensus.nMinimumChainWork = uint256{};
-        consensus.defaultAssumeValid = uint256{};
+        // consensus.nMinimumChainWork = uint256{};
+        // consensus.defaultAssumeValid = uint256{};
 
         pchMessageStart[0] = 0xfa;
         pchMessageStart[1] = 0xbf;
@@ -325,10 +325,10 @@ public:
 
         UpdateActivationParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1700725086, 1, 0x207fffff, 1, 86 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S("0xbdfa1259bff4a0bdd8baf11cf711dbd91e335ae80d9c172141a630e4d224273e"));
+        assert(genesis.hashMerkleRoot == uint256S("0xdc75a7fe257d2a8318204e47e19ac3720de38feacc58df87407960051db290ea"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
