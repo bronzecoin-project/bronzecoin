@@ -1,4 +1,4 @@
-# TOR SUPPORT IN LITECOIN
+# TOR SUPPORT IN BRONZECOIN
 
 It is possible to run Bronzecoin Core as a Tor onion service, and connect to such services.
 
